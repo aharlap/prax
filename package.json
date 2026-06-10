@@ -1,0 +1,16 @@
+{
+  "name": "prax",
+  "private": true,
+  "description": "Free, accessible, open-format building blocks for eLearning",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint"
+  }
+}
