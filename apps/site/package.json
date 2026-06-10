@@ -1,0 +1,28 @@
+{
+  "name": "@praxity/site",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Prax public docs and landing site skeleton.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host 127.0.0.1",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:a11y": "playwright test --config=playwright.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@praxity/compare": "workspace:*",
+    "@praxity/tokens": "workspace:*",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.60.0",
+    "vite": "^8.0.16"
+  }
+}

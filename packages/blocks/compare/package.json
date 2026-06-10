@@ -1,0 +1,59 @@
+{
+  "name": "@praxity/compare",
+  "version": "0.0.0",
+  "description": "Prax compare block placeholder package.",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "./dist/style.css",
+    "./dist/element.js",
+    "./dist/render-html.js"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./element": {
+      "types": "./dist/element.d.ts",
+      "import": "./dist/element.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./render-html": {
+      "types": "./dist/render-html.d.ts",
+      "import": "./dist/render-html.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp src/style.css dist/style.css && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "@praxity/html-render": "workspace:*",
+    "@praxity/runtime-core": "workspace:*",
+    "@praxity/schemas": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.2.3",
+    "@types/react": "^19.2.17",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}

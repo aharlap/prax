@@ -1,0 +1,72 @@
+/* SPDX-License-Identifier: MIT */
+
+.prax-compare,
+.prax-error-card {
+  box-sizing: border-box;
+  color: var(--prax-color-text, #172033);
+  font-family: var(--prax-font-body, system-ui, sans-serif);
+}
+
+.prax-compare {
+  background: var(--prax-color-canvas, #ffffff);
+  border: 1px solid var(--prax-color-border, #c8d0dc);
+  border-radius: var(--prax-radius-2, 0.5rem);
+  padding: var(--prax-space-4, 1rem);
+}
+
+.prax-compare h2,
+.prax-error-card h2 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin: 0 0 var(--prax-space-2, 0.5rem);
+}
+
+.prax-compare p,
+.prax-error-card p {
+  margin: 0 0 var(--prax-space-4, 1rem);
+}
+
+.prax-compare__media {
+  display: grid;
+  gap: var(--prax-space-3, 0.75rem);
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.prax-compare__figure {
+  margin: 0;
+}
+
+.prax-compare__figure img {
+  background: var(--prax-color-surface, #f7f8fa);
+  border: 1px solid var(--prax-color-border, #c8d0dc);
+  border-radius: var(--prax-radius-1, 0.25rem);
+  display: block;
+  inline-size: 100%;
+  min-block-size: 8rem;
+  object-fit: cover;
+}
+
+.prax-compare__figure figcaption {
+  color: var(--prax-color-muted, #5a6578);
+  font-size: 0.875rem;
+  margin-block-start: var(--prax-space-2, 0.5rem);
+}
+
+.prax-error-card {
+  background: var(--prax-color-danger-surface, #fff4f2);
+  border: 1px solid var(--prax-color-danger, #b42318);
+  border-radius: var(--prax-radius-2, 0.5rem);
+  padding: var(--prax-space-4, 1rem);
+}
+
+.prax-error-card summary,
+.prax-error-card a {
+  align-items: center;
+  display: inline-flex;
+  min-block-size: 1.5rem;
+}
+
+.prax-error-card details,
+.prax-error-card a {
+  margin-block-start: var(--prax-space-3, 0.75rem);
+}

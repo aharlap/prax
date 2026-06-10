@@ -1,0 +1,28 @@
+{
+  "name": "@praxity/schemas",
+  "version": "0.0.0",
+  "description": "Prax JSON schemas, config types, and migrations.",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./compare/v1.json": "./dist/schemas/compare/v1.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist/schemas && cp -R schemas/compare dist/schemas/compare && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test dist/**/*.test.js"
+  }
+}

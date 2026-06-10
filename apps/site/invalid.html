@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prax invalid compare fixture</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <main class="site-shell">
+      <h1>Prax invalid compare fixture</h1>
+
+      <prax-compare>
+        <script type="application/json">
+          {
+            "$schema": "https://praxity.io/schemas/compare/v1.json",
+            "block": "compare",
+            "v": 2,
+            "meta": {
+              "title": "Invalid compare config",
+              "lang": "en"
+            },
+            "content": {}
+          }
+        </script>
+        <div data-prax-ssr>
+          <section class="prax-compare" lang="en">
+            <h2>Invalid compare fallback</h2>
+            <p>This fallback remains readable when configuration validation fails.</p>
+          </section>
+        </div>
+      </prax-compare>
+    </main>
+  </body>
+</html>

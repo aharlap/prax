@@ -1,0 +1,71 @@
+{
+  "$comment": "SPDX-License-Identifier: MIT",
+  "$id": "https://praxity.io/schemas/compare/v1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prax Compare block config v1",
+  "type": "object",
+  "required": ["block", "v", "meta", "content"],
+  "properties": {
+    "$schema": {
+      "const": "https://praxity.io/schemas/compare/v1.json"
+    },
+    "block": {
+      "const": "compare"
+    },
+    "v": {
+      "const": 1
+    },
+    "meta": {
+      "type": "object",
+      "required": ["lang"],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "content": {
+      "type": "object",
+      "required": ["prompt", "before", "after"],
+      "properties": {
+        "prompt": {
+          "type": "string"
+        },
+        "before": {
+          "$ref": "#/$defs/urlMedia"
+        },
+        "after": {
+          "$ref": "#/$defs/urlMedia"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "urlMedia": {
+      "type": "object",
+      "required": ["kind", "href", "alt"],
+      "properties": {
+        "kind": {
+          "const": "url"
+        },
+        "href": {
+          "type": "string",
+          "not": {
+            "pattern": "^[dD][aA][tT][aA]:"
+          }
+        },
+        "alt": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -3,14 +3,28 @@
   "private": true,
   "description": "Free, accessible, open-format building blocks for eLearning",
   "license": "MIT",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@11.5.3",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.13"
   },
   "scripts": {
     "build": "turbo run build",
+    "changeset": "changeset",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
     "test": "turbo run test",
+    "test:a11y": "turbo run test:a11y",
     "typecheck": "turbo run typecheck",
-    "lint": "turbo run lint"
+    "lint": "biome check . && turbo run lint",
+    "release:dry-run": "pnpm verify && pnpm -r --filter './packages/**' publish --dry-run --access public --no-git-checks",
+    "version-packages": "changeset version",
+    "verify": "pnpm build && pnpm typecheck && pnpm format:check && pnpm lint && pnpm test && pnpm test:a11y"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "@changesets/cli": "^2.31.0",
+    "@types/node": "^22.19.20",
+    "turbo": "^2.9.17",
+    "typescript": "^6.0.3"
   }
 }

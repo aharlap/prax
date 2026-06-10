@@ -1,0 +1,25 @@
+/* SPDX-License-Identifier: MIT */
+
+body {
+  background: var(--prax-color-surface, #f7f8fa);
+  color: var(--prax-color-text, #172033);
+  font-family: var(--prax-font-body, system-ui, sans-serif);
+  margin: 0;
+}
+
+.site-shell {
+  margin: 0 auto;
+  max-inline-size: 60rem;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.site-shell h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 var(--prax-space-2, 0.5rem);
+}
+
+.site-intro {
+  color: var(--prax-color-muted, #5a6578);
+  margin: 0 0 var(--prax-space-6, 1.5rem);
+}

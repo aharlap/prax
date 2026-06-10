@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prax hello-world compare</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <main class="site-shell">
+      <h1>Prax compare hello world</h1>
+      <p class="site-intro">
+        A minimal inline JSON embed with semantic fallback and custom element hydration.
+      </p>
+
+      <prax-compare>
+        <script type="application/json">
+          {
+            "$schema": "https://praxity.io/schemas/compare/v1.json",
+            "block": "compare",
+            "v": 1,
+            "meta": {
+              "title": "Workspace before and after",
+              "lang": "en"
+            },
+            "content": {
+              "prompt": "Compare the two workspace states and identify what changed.",
+              "before": {
+                "kind": "url",
+                "href": "https://picsum.photos/id/1048/900/600",
+                "alt": "A desk before organization"
+              },
+              "after": {
+                "kind": "url",
+                "href": "https://picsum.photos/id/1062/900/600",
+                "alt": "A desk after organization"
+              }
+            }
+          }
+        </script>
+        <div data-prax-ssr>
+          <section class="prax-compare" lang="en">
+            <h2>Workspace before and after</h2>
+            <p>Compare the two workspace states and identify what changed.</p>
+            <section class="prax-compare__media" aria-label="Workspace before and after">
+              <figure class="prax-compare__figure">
+                <img src="https://picsum.photos/id/1048/900/600" alt="A desk before organization">
+                <figcaption>Before</figcaption>
+              </figure>
+              <figure class="prax-compare__figure">
+                <img src="https://picsum.photos/id/1062/900/600" alt="A desk after organization">
+                <figcaption>After</figcaption>
+              </figure>
+            </section>
+          </section>
+        </div>
+      </prax-compare>
+    </main>
+  </body>
+</html>

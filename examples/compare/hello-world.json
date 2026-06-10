@@ -1,0 +1,23 @@
+{
+  "$comment": "SPDX-License-Identifier: MIT",
+  "$schema": "https://praxity.io/schemas/compare/v1.json",
+  "block": "compare",
+  "v": 1,
+  "meta": {
+    "title": "Workspace before and after",
+    "lang": "en"
+  },
+  "content": {
+    "prompt": "Compare the two workspace states and identify what changed.",
+    "before": {
+      "kind": "url",
+      "href": "https://picsum.photos/id/1048/900/600",
+      "alt": "A desk before organization"
+    },
+    "after": {
+      "kind": "url",
+      "href": "https://picsum.photos/id/1062/900/600",
+      "alt": "A desk after organization"
+    }
+  }
+}
