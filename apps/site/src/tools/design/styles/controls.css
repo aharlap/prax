@@ -1,0 +1,310 @@
+/* SPDX-License-Identifier: MIT */
+
+.design-field {
+  display: grid;
+  gap: 0.3125rem;
+}
+
+.design-field > span,
+.design-field > label,
+.design-label span {
+  color: var(--tool-muted);
+  font-size: 0.71875rem;
+  font-weight: 650;
+}
+
+.design-label {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-block: 0.75rem 0.3125rem;
+}
+
+.design-label:first-of-type {
+  margin-block-start: 0;
+}
+
+.design-label-row {
+  align-items: center;
+  display: flex;
+  gap: 0.625rem;
+  justify-content: space-between;
+}
+
+.design-label-row .design-label {
+  flex: 1 1 auto;
+  margin-block: 0;
+}
+
+.design-field-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: 0.5rem;
+}
+
+.design-mini-button {
+  background: var(--tool-surface);
+  border: 0.0625rem solid var(--tool-border-2);
+  border-radius: var(--tool-radius-sm);
+  color: var(--tool-text);
+  cursor: pointer;
+  font-size: 0.71875rem;
+  font-weight: 650;
+  min-block-size: 2rem;
+  padding: 0 0.625rem;
+}
+
+.design-mini-button:hover {
+  background: var(--tool-surface-3);
+  border-color: #c7c6c0;
+}
+
+.design-mini-button--icon {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.3125rem;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.design-mini-button--icon svg {
+  block-size: 0.875rem;
+  fill: none;
+  inline-size: 0.875rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.design-input {
+  background-color: var(--tool-surface);
+  border: 0.0625rem solid var(--tool-border-2);
+  border-radius: var(--tool-radius-sm);
+  color: var(--tool-text);
+  min-block-size: 2rem;
+  padding: 0 0.5625rem;
+  width: 100%;
+}
+
+.design-workbench .design-input {
+  font-weight: 400;
+}
+
+select.design-input {
+  padding-inline-end: 2.5rem;
+}
+
+.design-textarea {
+  line-height: 1.4;
+  min-block-size: 4.75rem;
+  padding-block: 0.5rem;
+  resize: vertical;
+}
+
+.design-textarea--rules {
+  min-block-size: 14rem;
+}
+
+.design-tip {
+  align-items: center;
+  background: var(--tool-surface-3);
+  border: 0.0625rem solid var(--tool-border);
+  border-radius: 999px;
+  color: var(--tool-muted);
+  cursor: help;
+  display: inline-flex;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  justify-content: center;
+  margin-inline-start: 0.25rem;
+  min-block-size: 1rem;
+  min-inline-size: 1rem;
+}
+
+.design-tooltip {
+  background: var(--tool-surface);
+  border: 0.0625rem solid var(--tool-border-2);
+  border-radius: var(--tool-radius-sm);
+  box-shadow: 0 12px 24px rgb(27 26 24 / 0.14);
+  color: var(--tool-text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  inline-size: max-content;
+  line-height: 1.35;
+  max-inline-size: min(18rem, calc(100vw - 1rem));
+  padding: 0.5rem 0.625rem;
+  position: fixed;
+  z-index: 20;
+}
+
+.design-help {
+  color: var(--tool-muted);
+  font-size: 0.75rem;
+  margin: 0.625rem 0 0;
+}
+
+.design-source-card {
+  background: var(--tool-surface);
+  border: 0.0625rem dashed var(--tool-border-2);
+  border-radius: var(--tool-radius);
+  color: var(--tool-muted);
+  cursor: not-allowed;
+  display: grid;
+  gap: 0.3125rem;
+  margin-block-start: 0.75rem;
+  padding: 0.75rem;
+  text-align: start;
+  width: 100%;
+}
+
+.design-source-card span {
+  color: var(--tool-text);
+  font-weight: 650;
+}
+
+.design-source-card small {
+  color: var(--tool-muted);
+  font-size: 0.71875rem;
+  line-height: 1.35;
+}
+
+.design-token-list {
+  display: grid;
+}
+
+.design-token-row {
+  align-items: center;
+  border-block-start: 0.0625rem solid var(--tool-line);
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: minmax(8rem, 1fr) 2rem minmax(6.5rem, 7.25rem);
+  min-block-size: 2.5rem;
+}
+
+.design-token-row:first-child {
+  border-block-start: 0;
+}
+
+.design-token-row__name {
+  font-weight: 600;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.design-token-row input[type="color"] {
+  background: transparent;
+  border: 0;
+  block-size: 1.625rem;
+  cursor: pointer;
+  inline-size: 2rem;
+  padding: 0;
+}
+
+.design-token-row__hex,
+.design-audit-row__ratio {
+  color: var(--tool-faint);
+  font-family: var(--tool-mono);
+  font-size: 0.6875rem;
+}
+
+.design-token-row__hex {
+  background: var(--tool-surface);
+  border: 0.0625rem solid transparent;
+  border-radius: var(--tool-radius-sm);
+  color: var(--tool-text);
+  min-block-size: 1.75rem;
+  min-inline-size: 0;
+  padding: 0 0.375rem;
+  text-transform: lowercase;
+}
+
+.design-token-row__hex:focus {
+  border-color: var(--tool-border-2);
+}
+
+.design-control-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.design-unit-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.design-unit-field .design-input:first-child {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+}
+
+.design-unit-field .design-segmented {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
+}
+
+.design-segmented {
+  background: var(--tool-surface-3);
+  border: 0.0625rem solid var(--tool-border);
+  border-radius: var(--tool-radius-sm);
+  display: flex;
+  min-inline-size: 0;
+  overflow: hidden;
+}
+
+.design-segmented button {
+  background: transparent;
+  border: 0;
+  border-inline-start: 0.0625rem solid var(--tool-border);
+  color: var(--tool-muted);
+  cursor: pointer;
+  flex: 1 1 auto;
+  font-weight: 650;
+  min-block-size: 2rem;
+  padding: 0 0.5rem;
+}
+
+.design-segmented button:first-child {
+  border-inline-start: 0;
+}
+
+.design-segmented button:hover,
+.design-segmented button[aria-pressed="true"] {
+  background: var(--tool-surface);
+  color: var(--tool-text);
+}
+
+.design-segmented--attached {
+  border-inline-start: 0;
+}
+
+.design-check-list {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.design-check-row {
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-block-size: 1.875rem;
+}
+
+.design-check-row input {
+  accent-color: var(--tool-accent);
+  margin: 0;
+}
+
+.design-check-row__label {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.25rem;
+  min-inline-size: 0;
+}
+
+.design-check-row strong {
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.2;
+}

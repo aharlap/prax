@@ -1,0 +1,198 @@
+/* SPDX-License-Identifier: MIT */
+
+@media (max-width: 70rem) {
+  .design-workbench {
+    block-size: auto;
+    min-block-size: 100vh;
+    overflow: visible;
+  }
+
+  .design-app {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  .design-rail {
+    border-block-start: 0.0625rem solid var(--tool-border);
+    border-inline-end: 0;
+  }
+
+  .design-rail,
+  .design-output {
+    overflow: visible;
+  }
+
+  .design-output {
+    padding: 0.75rem;
+  }
+
+  .design-inspector,
+  .design-state-grid,
+  .design-ui-grid,
+  .design-learning-grid,
+  .design-colour-wireframes,
+  .design-type-metrics,
+  .design-preview-grid,
+  .design-course-home__body,
+  .design-lesson-frame,
+  .design-figure-row,
+  .design-block__figures,
+  .design-course__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .design-preview {
+    max-inline-size: 64rem;
+  }
+
+  .design-course-home__bar {
+    align-items: start;
+    display: grid;
+    padding-block: 0.875rem;
+  }
+}
+
+@media (max-width: 42rem) {
+  .design-topbar {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    min-block-size: 0;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .design-brand {
+    font-size: 0.8125rem;
+  }
+
+  .design-tool-switch,
+  .design-tool-switch select {
+    min-inline-size: 0;
+    width: 100%;
+  }
+
+  .design-topbar__nav {
+    display: none;
+  }
+
+  .design-topbar__spacer {
+    display: none;
+  }
+
+  .design-export-menu {
+    justify-self: end;
+  }
+
+  .design-export-menu summary {
+    min-block-size: 1.875rem;
+    padding-inline: 0.625rem;
+  }
+
+  .design-stage__header {
+    align-items: stretch;
+    display: grid;
+    gap: 0.625rem;
+    padding: 0.75rem;
+  }
+
+  .design-mode-tabs {
+    overflow-x: auto;
+  }
+
+  .design-mode-tabs button {
+    flex: 0 0 auto;
+    padding-inline: 0.5rem;
+  }
+
+  .design-colour-role {
+    align-items: start;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .design-colour-role strong {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .design-preview {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .design-course,
+  .design-hero-canvas,
+  .design-preview-stack,
+  .design-block-stage,
+  .design-course__hero,
+  .design-block__body,
+  .design-ui-grid,
+  .design-state-grid,
+  .design-learning-grid,
+  .design-colour-wireframes {
+    padding: 0.75rem;
+  }
+
+  .design-course-visualizer,
+  .design-preview-grid {
+    gap: 0.75rem;
+  }
+
+  .design-course-home__body {
+    padding: 1rem;
+  }
+
+  .design-course-home__body h2 {
+    font-size: clamp(1.65rem, 10vw, 2.4rem);
+  }
+
+  .design-course-home__bar nav {
+    gap: 0.625rem;
+  }
+
+  .design-asset-scene {
+    grid-template-columns: 1fr;
+    min-block-size: 0;
+  }
+
+  .design-asset-scene__note {
+    margin-block-end: 0;
+  }
+
+  .design-video-poster {
+    grid-template-columns: 1fr;
+    min-block-size: 0;
+  }
+
+  .design-video-poster div {
+    margin-block-end: 0;
+  }
+
+  .design-lesson-frame__header {
+    padding: 0.875rem;
+  }
+
+  .design-lesson-frame main,
+  .design-video-card,
+  .design-quiz-card {
+    padding: 0.875rem;
+  }
+
+  .design-course__hero h2 {
+    font-size: clamp(1.15rem, 7vw, 1.5rem);
+  }
+
+  .design-rail__section,
+  .design-inspector__section {
+    padding: 0.75rem;
+  }
+
+  .design-label-row {
+    align-items: stretch;
+    display: grid;
+  }
+
+  .design-mini-button--icon {
+    justify-content: center;
+    min-block-size: 2rem;
+  }
+}

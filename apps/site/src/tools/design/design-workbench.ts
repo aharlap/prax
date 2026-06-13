@@ -31,7 +31,7 @@ import {
   type WorkbenchState,
 } from "./design-workbench-model.js";
 import { praxityTools } from "../shared/routes.js";
-import "./design-workbench.css";
+import "./styles/index.css";
 
 const firstPreset = presets[0] as DesignPreset;
 const state: WorkbenchState = {
