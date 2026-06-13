@@ -5,7 +5,7 @@ import "@praxity/compare/style.css";
 import "@praxity/compare/element";
 import "./site.css";
 
-import { renderDesignWorkbench } from "./design-workbench.js";
+import { renderDesignWorkbench } from "./tools/design/index.js";
 
 if (window.location.pathname.replace(/\/$/, "") === "/tools/design") {
   renderDesignWorkbench();

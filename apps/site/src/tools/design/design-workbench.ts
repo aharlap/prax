@@ -30,6 +30,7 @@ import {
   type TypeScaleRepairTarget,
   type WorkbenchState,
 } from "./design-workbench-model.js";
+import { praxityTools } from "../shared/routes.js";
 import "./design-workbench.css";
 
 const firstPreset = presets[0] as DesignPreset;
@@ -60,6 +61,17 @@ const colorHelp: Record<string, string> = {
   "error-container": "Background for error messages.",
 };
 
+function renderToolOptions(activeToolId: string): string {
+  return praxityTools
+    .map((tool) => {
+      const selected = tool.id === activeToolId ? " selected" : "";
+      const disabled = tool.status === "planned" ? " disabled" : "";
+
+      return `<option value="${escapeHtml(tool.href)}"${selected}${disabled}>${escapeHtml(tool.label)}</option>`;
+    })
+    .join("");
+}
+
 export function renderDesignWorkbench(): void {
   document.title = "Praxity Design Tool";
   document.body.innerHTML = `
@@ -70,9 +82,7 @@ export function renderDesignWorkbench(): void {
         <label class="design-tool-switch">
           <span class="visually-hidden">Tool</span>
           <select aria-label="Praxity tool">
-            <option>Design</option>
-            <option disabled>Compare</option>
-            <option disabled>Interactive video</option>
+            ${renderToolOptions("design")}
           </select>
         </label>
         <nav class="design-topbar__nav" aria-label="Site">
