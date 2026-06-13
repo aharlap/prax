@@ -28,5 +28,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "tsc -p tsconfig.json --noEmit",
     "test": "node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "colorjs.io": "^0.6.1"
   }
 }

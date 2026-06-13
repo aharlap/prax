@@ -7,10 +7,24 @@ export const praxTokenFiles = {
 } as const;
 
 export {
+  type ApcaAdvisory,
+  type ApcaPairCheck,
+  auditTokenApcaPairs,
+  auditTokenColorPairs,
+  auditTokenDocument,
+  checkApcaColorPair,
+  checkWcagColorPair,
   type ContrastFailure,
+  defaultOklchRepairHook,
+  getApcaAdvisories,
   getContrastRatio,
+  type OklchRepairHook,
+  type OklchRepairSuggestion,
+  type TokenAuditResult,
+  type TokenColorPair,
   parseHexColor,
   type TokenDocument,
   type TokenValue,
   validateTokenContrast,
+  type WcagPairCheck,
 } from "./contrast.js";

@@ -93,7 +93,11 @@ importers:
         specifier: workspace:*
         version: link:../runtime-core
 
-  packages/tokens: {}
+  packages/tokens:
+    dependencies:
+      colorjs.io:
+        specifier: ^0.6.1
+        version: 0.6.1
 
 packages:
 
@@ -445,6 +449,9 @@ packages:
 
   chardet@2.1.1:
     resolution: {integrity: sha512-PsezH1rqdV9VvyNhxxOW32/d75r01NY7TQCmOqomRo15ZSOKbpTFVsfjghxo6JloQUCGnH4k1LGu0R4yCLlWQQ==}
+
+  colorjs.io@0.6.1:
+    resolution: {integrity: sha512-8lyR2wHzuIykCpqHKgluGsqQi5iDm3/a2IgP2GBZrasn2sBRkE4NOGsglZxWLs/jZQoNkmA/KM/8NV16rLUdBg==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1267,6 +1274,8 @@ snapshots:
       fill-range: 7.1.1
 
   chardet@2.1.1: {}
+
+  colorjs.io@0.6.1: {}
 
   cross-spawn@7.0.6:
     dependencies:
