@@ -30,7 +30,7 @@ import {
   type TypeScaleRepairTarget,
   type WorkbenchState,
 } from "./design-workbench-model.js";
-import { praxityTools } from "../shared/routes.js";
+import { bindToolsShell, renderToolsShell } from "../shared/tools-shell.js";
 import "./styles/index.css";
 
 const firstPreset = presets[0] as DesignPreset;
@@ -61,43 +61,24 @@ const colorHelp: Record<string, string> = {
   "error-container": "Background for error messages.",
 };
 
-function renderToolOptions(activeToolId: string): string {
-  return praxityTools
-    .map((tool) => {
-      const selected = tool.id === activeToolId ? " selected" : "";
-      const disabled = tool.status === "planned" ? " disabled" : "";
-
-      return `<option value="${escapeHtml(tool.href)}"${selected}${disabled}>${escapeHtml(tool.label)}</option>`;
-    })
-    .join("");
-}
-
 export function renderDesignWorkbench(): void {
   document.title = "Praxity Design Tool";
-  document.body.innerHTML = `
-    <main class="design-workbench" aria-label="Praxity Design Tool">
+  document.body.innerHTML = renderToolsShell({
+    activeToolId: "design",
+    ariaLabel: "Praxity Design Tool",
+    title: "Praxity Design Tool",
+    actions: `
+      <details class="design-export-menu">
+        <summary>Export</summary>
+        <div>
+          <button type="button" data-export="design">DESIGN.md</button>
+          <button type="button" data-export="tokens">tokens.json</button>
+          <button type="button" disabled>CSS variables</button>
+        </div>
+      </details>
+    `,
+    children: `
       <div id="design-live-region" class="visually-hidden" aria-live="polite"></div>
-      <header class="design-topbar">
-        <a class="design-brand" href="/" aria-label="Praxity home">Praxity</a>
-        <label class="design-tool-switch">
-          <span class="visually-hidden">Tool</span>
-          <select aria-label="Praxity tool">
-            ${renderToolOptions("design")}
-          </select>
-        </label>
-        <nav class="design-topbar__nav" aria-label="Site">
-          <a href="/">Docs</a>
-        </nav>
-        <div class="design-topbar__spacer"></div>
-        <details class="design-export-menu">
-          <summary>Export</summary>
-          <div>
-            <button type="button" data-export="design">DESIGN.md</button>
-            <button type="button" data-export="tokens">tokens.json</button>
-            <button type="button" disabled>CSS variables</button>
-          </div>
-        </details>
-      </header>
 
       <section class="design-app" aria-label="Design workbench">
         <aside class="design-rail" aria-label="Design system controls" tabindex="0">
@@ -181,9 +162,10 @@ export function renderDesignWorkbench(): void {
         </section>
       </section>
       <div id="design-tooltip" class="design-tooltip" role="tooltip" hidden></div>
-    </main>
-  `;
+    `,
+  });
 
+  bindToolsShell();
   populatePresetSelect();
   bindWorkbenchEvents();
   bindTooltipEvents();
