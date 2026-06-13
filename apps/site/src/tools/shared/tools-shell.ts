@@ -45,7 +45,7 @@ export function bindToolsShell(): void {
 
   switcher?.addEventListener("change", () => {
     const route = praxityTools.find((tool) => tool.href === switcher.value);
-    if (!route || route.status !== "ready") {
+    if (route?.status !== "ready") {
       return;
     }
 

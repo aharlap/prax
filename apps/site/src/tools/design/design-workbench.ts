@@ -7,30 +7,30 @@ import {
   type TokenValue,
   type WcagPairCheck,
 } from "@praxity/tokens";
+import { bindToolsShell, renderToolsShell } from "../shared/tools-shell.js";
 import {
+  type ColorRepairTarget,
+  type ComponentSpec,
   cloneSections,
   componentDescriptions,
   componentOptions,
   componentSpecs,
   customPresetId,
-  defaultFont,
-  elevationFor,
-  fontOptions,
-  presets,
-  radiusFor,
-  spacingFor,
-  toTokens,
-  type ColorRepairTarget,
-  type ComponentSpec,
   type DesignDiagnostic,
   type DesignPreset,
   type DesignTokenDocument,
+  defaultFont,
+  elevationFor,
+  fontOptions,
   type ParsedAudit,
+  presets,
   type RepairTarget,
+  radiusFor,
+  spacingFor,
   type TypeScaleRepairTarget,
+  toTokens,
   type WorkbenchState,
 } from "./design-workbench-model.js";
-import { bindToolsShell, renderToolsShell } from "../shared/tools-shell.js";
 import "./styles/index.css";
 
 const firstPreset = presets[0] as DesignPreset;
@@ -2621,10 +2621,6 @@ function parseHexRgb(value: string): [number, number, number] | null {
     Number.parseInt(cleaned.slice(2, 4), 16),
     Number.parseInt(cleaned.slice(4, 6), 16),
   ];
-}
-
-function sentenceCase(value: string): string {
-  return `${value.slice(0, 1).toUpperCase()}${value.slice(1)}`;
 }
 
 function kebabCase(value: string): string {

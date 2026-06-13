@@ -238,11 +238,6 @@ select.design-input {
   border-start-end-radius: 0;
 }
 
-.design-unit-field .design-segmented {
-  border-end-start-radius: 0;
-  border-start-start-radius: 0;
-}
-
 .design-segmented {
   background: var(--tool-surface-3);
   border: 0.0625rem solid var(--tool-border);
@@ -250,6 +245,11 @@ select.design-input {
   display: flex;
   min-inline-size: 0;
   overflow: hidden;
+}
+
+.design-unit-field .design-segmented {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
 }
 
 .design-segmented button {
